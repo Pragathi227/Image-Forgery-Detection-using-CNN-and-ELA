@@ -152,15 +152,25 @@ All training images undergo ELA preprocessing before feeding into the CNN.
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
-Add your screenshots here if needed:
 
-```
-![Home Page](<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/386427a9-ace2-40f4-8268-80115727b323" />)
-![Result Page - Original Image](<img width="560" height="360" alt="image" src="https://github.com/user-attachments/assets/67ee4fdf-25d6-44dd-8186-99cb0c01448e" />)
-![Result Page - Tampered Image](<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/cc647770-0389-430a-9d74-ddea0b4c6d6b" />)
-```
+[Home Page]
+
+<img width="560" height="360" alt="image" src="https://github.com/user-attachments/assets/c169123c-a504-4f40-8411-2a96514db108" />
+
+
+
+[Result Page - Original Image]
+
+<img width="560" height="360" alt="image" src="https://github.com/user-attachments/assets/f08c7353-5a1a-4c61-81ab-d253ae87cb76" />
+
+
+
+[Result Page - Tampered Image]
+
+
+<img width="560" height="360" alt="Screenshot 2025-11-29 072925" src="https://github.com/user-attachments/assets/542b9835-db81-4090-9a42-fcf1feefa445" />
 
 
 
