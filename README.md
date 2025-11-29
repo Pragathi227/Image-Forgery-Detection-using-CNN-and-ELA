@@ -91,16 +91,16 @@ http://127.0.0.1:5000/
 📸 Screenshots
 
 Home Page 
-<img width="2710" height="1385" alt="image" src="https://github.com/user-attachments/assets/6a7e14b7-0236-43a3-8b79-ef82a419c00c" />
+<img width="710" height="385" alt="image" src="https://github.com/user-attachments/assets/6a7e14b7-0236-43a3-8b79-ef82a419c00c" />
 
 About Page
-<img width="2623" height="1385" alt="image" src="https://github.com/user-attachments/assets/386427a9-ace2-40f4-8268-80115727b323" />
+<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/386427a9-ace2-40f4-8268-80115727b323" />
 
 Result Page - Original Image
-<img width="2560" height="1360" alt="image" src="https://github.com/user-attachments/assets/67ee4fdf-25d6-44dd-8186-99cb0c01448e" />
+<img width="560" height="360" alt="image" src="https://github.com/user-attachments/assets/67ee4fdf-25d6-44dd-8186-99cb0c01448e" />
 
 Result Page - Tampered Image
-<img width="2623" height="1385" alt="image" src="https://github.com/user-attachments/assets/cc647770-0389-430a-9d74-ddea0b4c6d6b" />
+<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/cc647770-0389-430a-9d74-ddea0b4c6d6b" />
 
 
 📘 Technologies Used
