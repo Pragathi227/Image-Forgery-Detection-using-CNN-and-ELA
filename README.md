@@ -1,139 +1,187 @@
-Image Forgery Detection using ELA & CNN
+# Image Forgery Detection using Error Level Analysis (ELA) & CNN
 
-This project detects forged (tampered) images using Error Level Analysis (ELA) and a Convolutional Neural Network (CNN).
-A lightweight Flask web application allows users to upload an image and instantly view:
+This project detects forged (tampered) images using **Error Level Analysis (ELA)** and a **Convolutional Neural Network (CNN)**.  
+The Flask-based interface allows users to upload an image and instantly receive:
 
-Whether the image is Authentic or Tampered
+- Authentic or Tampered classification  
+- Confidence score  
+- ELA visualization highlighting suspicious image regions  
 
-The confidence score
+This system is developed using Python, TensorFlow/Keras, OpenCV, Flask, Matplotlib, and supporting libraries.
 
-The ELA visualization highlighting suspicious regions
+---
 
-This system is built using Python, TensorFlow/Keras, OpenCV, and Flask.
+## 🚀 Features
 
-🚀 Features
+- Real-time automated forgery detection  
+- Error Level Analysis (ELA) preprocessing  
+- Convolutional Neural Network (CNN)–based classification  
+- Clean and user-friendly Flask web interface  
+- Accurate confidence percentage  
+- Visual display: Original Image + ELA Image  
+- Supports JPG, JPEG, PNG, GIF, TIF formats  
 
-✔ Automated image forgery detection
+---
 
-✔ Error Level Analysis (ELA) preprocessing
+## 📂 Project Structure
 
-✔ Custom-trained CNN model
-
-✔ Flask-based web interface
-
-✔ Real-time prediction
-
-✔ ELA heatmaps for visual forensics
-
-✔ Supports JPG, PNG, JPEG, GIF, TIF
-
-📂 Project Structure
+```bash
 image-forgery-detection-ELA-CNN/
 │
-├── main.py
-├── requirements.txt
-├── templates/
+├── main.py                     # Flask Application Entry Point
+├── requirements.txt            # Python Dependencies
+├── Image_forgery.h5            # Trained CNN Model (Downloaded Separately)
+│
+├── templates/                  # HTML Templates for Flask
 │   ├── index.html
 │   ├── upload.html
 │   ├── about.html
 │   └── result.html
 │
 ├── static/
-│   ├── uploads/
-│   └── output/
+│   ├── uploads/                # User Uploaded Images
+│   └── output/                 # ELA Visualizations & Results
 │
-└── (Model file must be added manually – see below)
+└── README.md
 
-🔥 Download Model File (Required)
+---
 
-The trained CNN model (Image_forgery.h5) is stored on Google Drive due to GitHub file size limits.
+## 📥 Download Trained Model (Required)
 
-📥 Download the Model File
-👉 https://drive.google.com/file/d/1CogtgM-yE-mBgIqFpbUB0v3oRi_nAQvi/view?usp=drive_link
+The trained model file **Image_forgery.h5** is not included in this repository because GitHub does not allow large binary files.
 
-After downloading, place it in your project root folder:
+👉 **Download the trained model here:**
+https://drive.google.com/file/d/1CogtgM-yE-mBgIqFpbUB0v3oRi_nAQvi/view?usp=drive_link
 
-/image-forgery-detection-ELA-CNN/Image_forgery.h5
 
-🧠 How the System Works
+After downloading, place the file in your project root:
 
-User uploads an image
+```bash
+image-forgery-detection-ELA-CNN/
+└── Image_forgery.h5
+```
 
-System performs Error Level Analysis (ELA)
+> ⚠️ The app will NOT run without this file.
+> Make sure the filename remains EXACTLY: **Image_forgery.h5**
 
-ELA image is passed to CNN
+---
 
-CNN predicts Original / Tampered
+## ⚙️ Installation & Setup
 
-Flask displays prediction + ELA heatmap
+### 1️⃣ Clone the Repository
 
-⚙️ Installation
-1. Clone the repository
-git clone https://github.com/yourusername/image-forgery-detection-ELA-CNN.git
+```bash
+git clone https://github.com/your-username/image-forgery-detection-ELA-CNN.git
+cd image-forgery-detection-ELA-CNN
+```
 
-2. Install dependencies
+### 2️⃣ Install Required Packages
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Add the model file
+### 3️⃣ Add the Model File
 
-Place the downloaded file here:
+Place the downloaded `Image_forgery.h5` file into the project root.
 
-/Image_forgery.h5
+### 4️⃣ Run the Flask Application
 
-4. Run the Flask app
+```bash
 python main.py
+```
 
+Open the application in your browser:
 
-Open in browser:
-
+```
 http://127.0.0.1:5000/
+```
 
-📸 Screenshots
+---
 
-Home Page 
-<img width="710" height="385" alt="image" src="https://github.com/user-attachments/assets/6a7e14b7-0236-43a3-8b79-ef82a419c00c" />
+## 🧠 How It Works
 
-About Page
-<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/386427a9-ace2-40f4-8268-80115727b323" />
+1. User uploads an image using the web interface.
+2. The image is validated and stored in the server directory.
+3. System performs **Error Level Analysis (ELA)**:
 
-Result Page - Original Image
-<img width="560" height="360" alt="image" src="https://github.com/user-attachments/assets/67ee4fdf-25d6-44dd-8186-99cb0c01448e" />
+   * Image is re-saved at 90% quality
+   * Difference between original vs. recompressed is extracted
+   * ELA highlights inconsistencies caused by tampering
+4. ELA image is resized, normalized, and fed into the CNN model.
+5. CNN predicts:
 
-Result Page - Tampered Image
-<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/cc647770-0389-430a-9d74-ddea0b4c6d6b" />
+   * **Original** or **Tampered**
+   * Confidence percentage
+6. The result page displays:
+
+   * Original image
+   * ELA output
+   * Prediction + confidence score
+
+---
+
+## 🛠 Technologies Used
+
+* **Python**
+* **Flask**
+* **TensorFlow / Keras**
+* **OpenCV**
+* **Pillow (PIL)**
+* **Matplotlib**
+* **NumPy**
+* **Scikit-Learn**
+
+---
+
+## 🧪 Dataset
+
+This model was trained using a dataset containing:
+
+* Authentic (original) images
+* Tampered (forged) images
+
+Forgery types include:
+
+* Copy-move
+* Splicing
+* Region manipulation
+* Color & lighting edits
+
+All training images undergo ELA preprocessing before feeding into the CNN.
+
+---
+
+## 📸 Screenshots (Optional)
+
+Add your screenshots here if needed:
+
+```
+![Home Page](<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/386427a9-ace2-40f4-8268-80115727b323" />)
+![Result Page - Original Image](<img width="560" height="360" alt="image" src="https://github.com/user-attachments/assets/67ee4fdf-25d6-44dd-8186-99cb0c01448e" />)
+![Result Page - Tampered Image](<img width="623" height="385" alt="image" src="https://github.com/user-attachments/assets/cc647770-0389-430a-9d74-ddea0b4c6d6b" />)
+```
 
 
-📘 Technologies Used
 
-Python
+---
 
-Flask
+## 📌 Future Enhancements
 
-TensorFlow / Keras
+* Deepfake image/video detection
+* Bounding box tamper localization
+* Transfer learning with VGG16, ResNet, EfficientNet
+* Cloud deployment and API support
+* Multi-format forensic analysis
+* PRNU-based noise pattern detection
 
-OpenCV
+---
 
-Matplotlib
 
-Numpy
+---
 
-PIL (Python Imaging Library)
+## 📄 License
 
-🧪 Dataset
+This project is intended for academic and research use only.
 
-Training dataset includes two categories:
-
-Authentic Images
-
-Tampered/Forged Images
-
-Dataset collected and compiled from multiple open sources and ELA-generated modifications.
-
-🛑 Note
-
-The CNN model is not included in the GitHub repository due to size constraints.
-Please download it from the provided Google Drive link.
-
-📄 License
-
-This project is for academic and educational purposes.
+```
